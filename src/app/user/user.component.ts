@@ -23,10 +23,6 @@ export class UserComponent implements OnInit, OnDestroy{
   ngOnInit(){
     this.getUsers();
   }
-  //, private location: Location
-  // ngOnChanges(): void {
-  //   location.reload();
-  // }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -47,14 +43,8 @@ export class UserComponent implements OnInit, OnDestroy{
 
 
   public deleteUser(id: number) {
-    const sub = this.userService.deleteUser(id).subscribe(
-      {
-        next: () => console.log('dentro al next'),
-        error: (e) => console.log(e),
-        complete: () => {this.router.navigate(["/"], { skipLocationChange: true }).then(() => {
-          return this.router.navigate(['/users'])})}
-      }
-    );
+    const sub = this.userService.deleteUser(id).subscribe();
     this.subscription.add(sub);
+    window.location.reload()
   }
 }
