@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, concatMap, map, throwError } from 'rxjs';
 import { User } from '../models/user';
 import { environment } from 'src/environments/environment';
 
@@ -26,6 +26,6 @@ export class UserService {
   }
 
   public deleteUser(userId: number): Observable<void> {
-     return this.http.delete<void>(`${this.apiUrl}/user/delete/`);
+    return this.http.delete<void>(`${this.apiUrl}/user/delete/${userId}`);
   }
 }
