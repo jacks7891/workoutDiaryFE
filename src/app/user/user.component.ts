@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -11,20 +12,28 @@ import { Subscription } from 'rxjs';
 })
 export class UserComponent implements OnInit, OnDestroy{
   public users!: User[];
-  private subscription!: Subscription;
+  private subscription = new Subscription();
 
-  constructor(private userService: UserService){}
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private route: ActivatedRoute
+  ){}
 
   ngOnInit(){
     this.getUsers();
   }
+  //, private location: Location
+  // ngOnChanges(): void {
+  //   location.reload();
+  // }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
   public getUsers(): void {
-    this.subscription = this.userService.getUsers().subscribe({
+    const sub: Subscription = this.userService.getUsers().subscribe({
       next: (users: User[]) => {
         this.users = users;
       },
@@ -32,6 +41,20 @@ export class UserComponent implements OnInit, OnDestroy{
         alert(error.message)
       }
     });
+    this.subscription.add(sub);
   }
 
+
+
+  public deleteUser(id: number) {
+    const sub = this.userService.deleteUser(id).subscribe(
+      {
+        next: () => console.log('dentro al next'),
+        error: (e) => console.log(e),
+        complete: () => {this.router.navigate(["/"], { skipLocationChange: true }).then(() => {
+          return this.router.navigate(['/users'])})}
+      }
+    );
+    this.subscription.add(sub);
+  }
 }
