@@ -3,19 +3,19 @@
   <main >
     <form [formGroup]="userForm" (ngSubmit)="onSubmit(userData)" class="modal-content">
       <div class="mb-3">
-        <label for="name" class="form-label">Name: {{userData.name}}</label>
+        <label for="name" class="form-label">Name:</label>
         <input type="text" class="form-control" id="name" formControlName="name">
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label">E-mail: {{userData.email}}</label>
+        <label for="email" class="form-label">E-mail:</label>
         <input type="email" class="form-control" id="email" formControlName="email">
       </div>
       <div class="mb-3">
-        <label for="phone" class="form-label">Phone-number: {{userData.phone}}</label>
+        <label for="phone" class="form-label">Phone-number:</label>
         <input type="text" class="form-control" id="phone" formControlName="phone">
       </div>
       <div class="mb-3">
-        <label for="imageUrl" class="form-label">Image: {{userData.imageUrl}}</label>
+        <label for="imageUrl" class="form-label">Image:</label>
         <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl">
       </div>
       <!-- Non mostrare la password iniziale, ma se necessario -->
@@ -23,8 +23,8 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" formControlName="password">
       </div> -->
-      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancel</button>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-secondary mt-2" (click)="modal.dismiss()">Cancel</button>
+      <button type="submit" class="btn btn-primary mt-2">Submit</button>
     </form>
   </main>
 </div>
