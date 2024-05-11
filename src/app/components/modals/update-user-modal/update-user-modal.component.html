@@ -1,0 +1,32 @@
+<div class="update-user-modal">
+  <header class=""><h2>Update user {{userData.id}}</h2></header>
+  <main >
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit(userData)" class="modal-content">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name: {{userData.name}}</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail: {{userData.email}}</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone-number: {{userData.phone}}</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+      </div>
+      <div class="mb-3">
+        <label for="imageUrl" class="form-label">Image: {{userData.imageUrl}}</label>
+        <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl">
+      </div>
+      <!-- Non mostrare la password iniziale, ma se necessario -->
+      <!-- <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password">
+      </div> -->
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancel</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </main>
+</div>
+
+

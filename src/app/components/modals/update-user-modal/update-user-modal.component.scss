@@ -1,0 +1,30 @@
+/* CSS per la modale */
+.update-user-modal {
+  //display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Altezza massima */
+  padding: 10px; /* Spazio intorno al contenuto */
+}
+
+/* CSS per il contenitore principale */
+.modal-content {
+  width: 100%; /* Larghezza della modale */
+  max-height: calc(100vh - 100px); /* Altezza massima */
+  overflow-y: auto; /* Scroll se il contenuto è troppo lungo */
+  padding: 10px; /* Spazio intorno al contenuto */
+  background-color: #fff; /* Colore di sfondo */
+  border-radius: 8px; /* Bordi arrotondati */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra */
+}
+
+/* CSS per il titolo */
+header {
+  text-align: center;
+  margin: 5px;
+}
+
+main {
+  width: 100%; /* Larghezza massima */
+}
+
