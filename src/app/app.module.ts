@@ -8,19 +8,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { UserComponent } from './components/user/user.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UpdateUserModalComponent } from './components/modals/update-user-modal/update-user-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     HomePageComponent,
-    NavBarComponent
+    NavBarComponent,
+    UpdateUserModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
