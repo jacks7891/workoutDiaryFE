@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UpdateUserModalComponent } from 'src/app/components/modals/update-user-modal/update-user-modal.component';
 
 @Component({
   selector: 'app-user',
@@ -18,7 +20,8 @@ export class UserComponent implements OnInit, OnDestroy{
   constructor(
     private userService: UserService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private modalService: NgbModal
   ){}
 
   ngOnInit(){
@@ -66,10 +69,14 @@ export class UserComponent implements OnInit, OnDestroy{
   }
 
   public updateUser(user: User) {
-    //TODO: anche qui deve caricare il form con i dati dell'utente però e poi permettere di modificarli
-    const sub = this.userService.updateUser(user).subscribe();
-    this.subscription.add(sub);
-    window.location.reload();
+    const modalRef = this.modalService.open(UpdateUserModalComponent);
+    modalRef.componentInstance.userData = user;
+    modalRef.result.then((result) => {
+      if (result == "User Updated") {
+        // Ricarica la pagina solo se l'utente è stato aggiornato con successo
+        window.location.reload();
+      }
+    });
   }
 
   public deleteUser(id: number): void {
