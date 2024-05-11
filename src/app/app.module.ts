@@ -11,6 +11,7 @@ import { UserComponent } from './components/user/user.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateUserModalComponent } from './components/modals/update-user-modal/update-user-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostUserModalComponent } from './components/modals/post-user-modal/post-user-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserComponent,
     HomePageComponent,
     NavBarComponent,
-    UpdateUserModalComponent
+    UpdateUserModalComponent,
+    PostUserModalComponent
   ],
   imports: [
     BrowserModule,
