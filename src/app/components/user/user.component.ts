@@ -44,8 +44,7 @@ export class UserComponent implements OnInit, OnDestroy{
     this.subscription.add(sub);
   }
 
-  public createUser() {
-    //TODO: togli utente mock e crea form per creaione su nuova pagina o popup(modale)
+  public createMockUser() {
     const min = 1;
     const max = 30;
     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -62,8 +61,12 @@ export class UserComponent implements OnInit, OnDestroy{
     window.location.reload();
   }
 
+  public createUser() {
+
+  }
+
   public findUser(id: number) {
-    //TODO: qua serve un campo di ricerca
+    //TODO: qua serve per un campo di ricerca
     const sub = this.userService.getUsersById(id).subscribe();
     this.subscription.add(sub);
   }
@@ -73,7 +76,6 @@ export class UserComponent implements OnInit, OnDestroy{
     modalRef.componentInstance.userData = user;
     modalRef.result.then((result) => {
       if (result == "User Updated") {
-        // Ricarica la pagina solo se l'utente è stato aggiornato con successo
         window.location.reload();
       }
     });

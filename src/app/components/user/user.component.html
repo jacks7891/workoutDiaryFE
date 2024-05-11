@@ -1,5 +1,10 @@
 <div class="container content">
-  <button (click)="createUser()" class="btn btn-secondary tooltips float-lg-start mt-2" data-placement="top" data-toggle="tooltip" data-original-title="Add">Add mock user <i class="fa fa-plus"></i></button>
+  <div>
+    <button (click)="createMockUser()" class="btn btn-secondary tooltips float-lg-none mt-2" data-placement="top" data-toggle="tooltip" data-original-title="Add">Add mock user <i class="fa fa-plus"></i></button>
+  </div>
+  <div>
+    <button (click)="createUser()" class="btn btn-secondary tooltips float-lg-start mt-2" data-placement="top" data-toggle="tooltip" data-original-title="Add">Add user <i class="fa fa-plus"></i></button>
+  </div>
     <div class="row">
         <div class="col-md-6 col-xl-3 mt-2" *ngFor="let user of users">
             <div class="card m-b-30">
