@@ -1,3 +1,10 @@
+::ng-deep .modal-dialog {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   margin-top:20px;
   background: #f5f5f5;
