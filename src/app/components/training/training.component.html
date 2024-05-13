@@ -1,1 +1,41 @@
-<p>training works!</p>
+<div class="container content">
+  <div>
+    <button (click)="createMockTraining()" class="btn btn-secondary tooltips float-lg-none mt-2" data-placement="top">Add mock training <i class="fa fa-plus"></i></button>
+  </div>
+  <div>
+    <button (click)="createMockTraining()" class="btn btn-secondary tooltips float-lg-start mt-2" data-placement="top" >Add training <i class="fa fa-plus"></i></button>
+  </div>
+    <div class="row">
+        <div class="col-md-6 col-xl-3 mt-2" *ngFor="let training of trainings">
+            <div class="card m-b-30">
+                <div class="card-body row">
+                    <div class="col-6">
+                        <a href=""><img src="{{training.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
+                    </div>
+                    <div class="col-6 card-title align-self-center mb-0">
+                        <h5>{{training.name}}</h5>
+                        <p class="m-0">Id: {{training.id}}</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fa fa-clock-o float-md-end"></i>Durata : <a href="#">{{training.durata}}</a></li>
+                    <li class="list-group-item"><i class="fa fa-level-up float-md-end"></i>Level : {{training.level}}</li>
+                    <li class="list-group-item"><i class="fa fa-bullseye float-md-end"></i>Target : {{training.target}}</li>
+                    <li class="list-group-item"><i class="fa fa-dumbbell float-md-end"></i>Exercises : {{training.exercises}}</li>
+                </ul>
+                <div class="card-body">
+                    <div class="float-md-end btn-group btn-group-sm">
+                        <button (click)="updateTraining(training)" class="btn btn-secondary"><i class="fa fa-pencil"></i></button>
+                        <button (click)="deleteTraining(training.id!)" class="btn btn-secondary"><i class="fa fa-times"></i></button>
+                    </div>
+                    <ul class="social-links list-inline mb-0">
+                      <button (click)="startWorkout(training.id!)" class="btn btn-secondary">START WORKOUT! <i class="fa fa-play-circle-o"></i></button>
+                        <!-- <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
