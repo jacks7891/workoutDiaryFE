@@ -12,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateUserModalComponent } from './components/modals/update-user-modal/update-user-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostUserModalComponent } from './components/modals/post-user-modal/post-user-modal.component';
+import { ExerciseComponent } from './components/exercise/exercise.component';
+import { TrainingComponent } from './components/training/training.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PostUserModalComponent } from './components/modals/post-user-modal/post
     HomePageComponent,
     NavBarComponent,
     UpdateUserModalComponent,
-    PostUserModalComponent
+    PostUserModalComponent,
+    ExerciseComponent,
+    TrainingComponent
   ],
   imports: [
     BrowserModule,
