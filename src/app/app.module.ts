@@ -14,6 +14,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PostUserModalComponent } from './components/modals/post-user-modal/post-user-modal.component';
 import { ExerciseComponent } from './components/exercise/exercise.component';
 import { TrainingComponent } from './components/training/training.component';
+import { PostTrainingModalComponent } from './components/modals/post-training-modal/post-training-modal.component';
+import { DiaryComponent } from './components/diary/diary.component';
+import { WorkoutComponent } from './components/workout/workout.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { TrainingComponent } from './components/training/training.component';
     UpdateUserModalComponent,
     PostUserModalComponent,
     ExerciseComponent,
-    TrainingComponent
+    TrainingComponent,
+    PostTrainingModalComponent,
+    DiaryComponent,
+    WorkoutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
