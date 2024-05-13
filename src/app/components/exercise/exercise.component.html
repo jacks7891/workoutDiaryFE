@@ -1,1 +1,38 @@
-<p>exercise works!</p>
+<div class="container content">
+  <div>
+    <button (click)="createMockExercise()" class="btn btn-secondary tooltips float-lg-none mt-2" data-placement="top" data-toggle="tooltip" data-original-title="Add">Add mock exercise <i class="fa fa-plus"></i></button>
+  </div>
+  <div>
+    <button (click)="createExercise()" class="btn btn-secondary tooltips float-lg-start mt-2" data-placement="top" data-toggle="tooltip" data-original-title="Add">Add exercise <i class="fa fa-plus"></i></button>
+  </div>
+    <div class="row">
+        <div class="col-md-6 col-xl-3 mt-2" *ngFor="let exercise of exercises">
+            <div class="card m-b-30">
+                <div class="card-body row">
+                    <div class="col-6">
+                        <a href=""><img src="{{exercise.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
+                    </div>
+                    <div class="col-6 card-title align-self-center mb-0">
+                        <h5>{{exercise.name}}</h5>
+                        <p class="m-0">Id: {{exercise.id}}</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fa fa-clock-o float-md-end"></i>Durata : <a href="#">{{exercise.durata}}</a></li>
+                    <li class="list-group-item"><i class="fa fa-bullseye float-md-end"></i>Target : {{exercise.target}}</li>
+                </ul>
+                <div class="card-body">
+                    <div class="float-md-end btn-group btn-group-sm">
+                        <button (click)="updateExercise(exercise)" class="btn btn-secondary"><i class="fa fa-pencil"></i></button>
+                        <button (click)="deleteExercise(exercise.id!)" class="btn btn-secondary"><i class="fa fa-times"></i></button>
+                    </div>
+                    <ul class="social-links list-inline mb-0">
+                        <!-- <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
