@@ -27,10 +27,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ### TODO
+
 - encapsulate modal logic for post and put in one place
 - fix scss tooltip for icons
 - fix scss training
-- add footer
+- mod footer
 - add authentication
 - create logic for startTraining
 - create logic for history/diary
