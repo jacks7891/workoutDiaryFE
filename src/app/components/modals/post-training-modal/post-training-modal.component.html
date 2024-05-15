@@ -1,1 +1,33 @@
-<p>post-training-modal works!</p>
+<div class="post-training-modal">
+  <header class=""><h2>Create new training</h2></header>
+  <main >
+    <form [formGroup]="trainingForm" (ngSubmit)="onSubmit()" class="modal-content">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">exercises:</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">durata:</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">level:</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">target:</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+      </div>
+      <div class="mb-3">
+        <label for="imageUrl" class="form-label">Image:</label>
+        <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl">
+      </div>
+      <button type="button" class="btn btn-secondary mt-2" (click)="modal.dismiss()">Cancel</button>
+      <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+  </main>
+</div>

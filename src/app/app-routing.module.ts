@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { UserComponent } from './components/user/user.component';
-import { TrainingComponent } from './components/training/training.component';
-import { ExerciseComponent } from './components/exercise/exercise.component';
-import { DiaryComponent } from './components/diary/diary.component';
-import { WorkoutComponent } from './components/workout/workout.component';
+import { HomePageComponent } from './components/features/home-page/home-page.component';
+import { UserComponent } from './components/features/user/user.component';
+import { TrainingComponent } from './components/features/training/training.component';
+import { ExerciseComponent } from './components/features/exercise/exercise.component';
+import { DiaryComponent } from './components/features/diary/diary.component';
+import { WorkoutComponent } from './components/features/workout/workout.component';
 
 const routes: Routes =  [
   { path: 'home', component:  HomePageComponent },

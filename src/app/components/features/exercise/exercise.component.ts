@@ -5,8 +5,8 @@ import { Subscription } from 'rxjs';
 import { Exercise } from 'src/app/models/exercise';
 import { User } from 'src/app/models/user';
 import { ExerciseService } from 'src/app/services/exercise.service';
-import { PostUserModalComponent } from '../modals/post-user-modal/post-user-modal.component';
-import { UpdateUserModalComponent } from '../modals/update-user-modal/update-user-modal.component';
+import { PostUserModalComponent } from '../../modals/post-user-modal/post-user-modal.component';
+import { UpdateUserModalComponent } from '../../modals/update-user-modal/update-user-modal.component';
 
 @Component({
   selector: 'app-exercise',

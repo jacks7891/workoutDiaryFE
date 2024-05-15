@@ -4,9 +4,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { Training } from 'src/app/models/training';
 import { TrainingService } from 'src/app/services/training.service';
-import { PostUserModalComponent } from '../modals/post-user-modal/post-user-modal.component';
-import { UpdateUserModalComponent } from '../modals/update-user-modal/update-user-modal.component';
+import { PostUserModalComponent } from '../../modals/post-user-modal/post-user-modal.component';
+import { UpdateUserModalComponent } from '../../modals/update-user-modal/update-user-modal.component';
 import { Router } from '@angular/router';
+import { PostTrainingModalComponent } from '../../modals/post-training-modal/post-training-modal.component';
 
 @Component({
   selector: 'app-training',
@@ -62,7 +63,7 @@ export class TrainingComponent implements OnInit, OnDestroy{
   }
 
   public createTraining() {
-    const modalRef = this.modalService.open(PostUserModalComponent);
+    const modalRef = this.modalService.open(PostTrainingModalComponent);
     modalRef.result.then((result) => {
       if (result == "Training Created") {
         window.location.reload();
@@ -77,7 +78,7 @@ export class TrainingComponent implements OnInit, OnDestroy{
   }
 
   public updateTraining(training: Training) {
-    const modalRef = this.modalService.open(UpdateUserModalComponent);
+    const modalRef = this.modalService.open(PostTrainingModalComponent);
     modalRef.componentInstance.userData = training;
     modalRef.result.then((result) => {
       if (result == "Training Updated") {

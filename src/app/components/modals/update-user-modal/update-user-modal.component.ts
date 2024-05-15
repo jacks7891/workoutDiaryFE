@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UpdateUserModalComponent implements OnDestroy {
 
-  @Input() userData!: User; // Dati dell'utente in input
+  userData!: User;
   userForm!: FormGroup;
   private subscription = new Subscription();
 

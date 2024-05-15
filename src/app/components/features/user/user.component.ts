@@ -7,7 +7,7 @@ import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateUserModalComponent } from 'src/app/components/modals/update-user-modal/update-user-modal.component';
-import { PostUserModalComponent } from '../modals/post-user-modal/post-user-modal.component';
+import { PostUserModalComponent } from '../../modals/post-user-modal/post-user-modal.component';
 
 @Component({
   selector: 'app-user',

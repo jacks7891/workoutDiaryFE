@@ -11,7 +11,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./post-user-modal.component.scss']
 })
 export class PostUserModalComponent {
-  //@Input() userData!: User; // Dati dell'utente in input
   userData!: User;
   userForm!: FormGroup;
   private subscription = new Subscription();
