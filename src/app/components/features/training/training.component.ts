@@ -55,7 +55,7 @@ export class TrainingComponent implements OnInit, OnDestroy{
       durata:0,
       level:'',
       target:0,
-      imageUrl:''
+      imageUrl:'https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU/200/300'
     }
     const sub = this.trainingService.postTraining(training).subscribe();
     this.subscription.add(sub);

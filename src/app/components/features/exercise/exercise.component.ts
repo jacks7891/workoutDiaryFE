@@ -54,7 +54,7 @@ export class ExerciseComponent implements OnInit, OnDestroy{
       reps:0,
       points:0,
       target:0,
-      imageUrl:''
+      imageUrl:'https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU/200/300'
     }
     const sub = this.exerciseService.postExercise(exercise).subscribe();
     this.subscription.add(sub);
